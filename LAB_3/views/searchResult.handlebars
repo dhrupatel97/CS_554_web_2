@@ -1,0 +1,11 @@
+<div class="container" style="margin-top: 2rem;">
+    {{#if lt}}
+    <ul>
+        {{#each lt}}
+        <li>
+            <a href="/show/{{show.id}}">{{show.name}}</a>
+        </li>
+        {{/each}}
+    </ul>
+    {{/if}}
+</div>
