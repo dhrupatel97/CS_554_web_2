@@ -3,10 +3,10 @@ body{
 }
 .movie-info{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-image: url('../img/bgg.jpg');
-    background-size: cover;
+    overflow: hidden;
+    border: 1px solid;
     padding: 15px;
-    overflow: hidden
+    box-shadow: 8px 9px;
 }
 
 #navbarColor01{

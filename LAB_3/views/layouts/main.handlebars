@@ -21,15 +21,18 @@
                 <form class="form-inline my-2 my-lg-0" method="POST" action="/search">
                     <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search">
                     <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    <a href="/popularsearches" style="padding-left: 20px;">Popular Searches</a>
                 </form>
             </div>
         </nav>
     </div>
+
     {{#if error}}
-    <p><span class="alert alert-dismissible alert-danger">{{error}}</span></p>
+    <p style="margin-top: 30px; margin-left:40px;"><span class="alert alert-dismissible alert-danger">{{error}}</span>
+    </p>
     {{/if}}
+
     {{{body}}}
-    </div>
 </body>
 
 </html>
