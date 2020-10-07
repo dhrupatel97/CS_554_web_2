@@ -9,23 +9,26 @@
 </head>
 
 <body>
-    <div class="bs-component">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="/">TV Maze Shows</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <form class="form-inline my-2 my-lg-0" method="POST" action="/search">
-                    <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                    <a href="/popularsearches" style="padding-left: 20px;">Popular Searches</a>
-                </form>
-            </div>
-        </nav>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">TV Maze Shows</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <form class="form-inline my-2 my-lg-0" method="POST" action="/search">
+                <label for="searching">
+                    <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search Here"
+                        id="searching" />
+                </label>
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Go</button>
+            </form>
+            <a id="pop" href="/popularsearches" style="padding-left: 20px;">Popular Searches</a>
+        </div>
+    </nav>
+
 
     {{#if error}}
     <p style="margin-top: 30px; margin-left:40px;"><span class="alert alert-dismissible alert-danger">{{error}}</span>

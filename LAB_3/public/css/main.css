@@ -9,9 +9,6 @@ body{
     box-shadow: 8px 9px;
 }
 
-#navbarColor01{
-    justify-content: right;
-}
 .movie-meta span {
     padding: 0 3px;
     border: 1px solid currentColor;
@@ -36,3 +33,18 @@ body{
 .btn-block {
     padding: 10px 25px;
 }
+
+#showslt{
+    color: #cc364e;
+}
+
+#pop{
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: lightgrey
+}
+
+#back{
+    background-color: lightgrey;
+}
+
