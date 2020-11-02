@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import SearchShows from './SearchShows';
 import noImage from '../img/download.jpeg';
-import { Card, CardActionArea, CardContent, CardMedia, Grid, Typography, makeStyles } from '@material-ui/core';
+import { Card, CardActionArea, CardContent, CardMedia, Grid, Typography,  makeStyles } from '@material-ui/core';
 
 import '../App.css';
 const useStyles = makeStyles({
@@ -42,19 +42,19 @@ const ShowList = (props) => {
 	const [ showsData, setShowsData ] = useState(undefined);
 	const [ searchTerm, setSearchTerm ] = useState('');
 	let card = null;
-	
+
 	//pagination
 	const [pageN, setPage] = useState(undefined)
 
 	useEffect(() => {
 		console.log('on load useeffect');
-		
+
 		setPage(parseInt(props.match.params.page));
 
 		async function fetchData() {
 			try {
 				const { data } = await axios.get(`http://api.tvmaze.com/shows?page=${props.match.params.page}`);
-				setShowsData(data);				
+				setShowsData(data);
 				setLoading(false);
 			} catch (e) {
 				console.log(e);

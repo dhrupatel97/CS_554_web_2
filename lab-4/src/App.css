@@ -1,0 +1,171 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 90px;
+}
+
+.App-header {
+  height: 280px;
+	padding: 20px;
+  text-align: center;
+  background: url("https://img.pngio.com/image-wiki-background-oddity-uprisings-marvel-universe-wiki-dark-red-backgrounds-png-1920_1080.jpg");
+}
+
+.App-title {
+	font-size: 1.5em;
+	font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.App-link {
+  padding: 0.4rem 0.8rem;
+	background-color: rgb(21, 125, 223);
+	border-radius: 3px;
+	color: black;
+	text-decoration: none !important;
+	margin: 5px;
+}
+
+.App-link:hover{
+  background-color: transparent;
+	color: red;
+	border: 2px solid white;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+* { box-sizing: border-box; }
+
+.pagination {
+  text-align: center;  
+  position: relative; 
+  display: inline-block; 
+  padding-top: 20px;
+}
+.pagination a{
+  margin: 15px;
+  padding: 5px;
+  font-weight: bold;
+  color:#b71540;
+  border:  solid 0px;
+  text-decoration: none !important;
+}
+
+.btn {
+  font-size: medium;
+  background: none;
+  min-width: 40px;
+  border: 3px solid #aaaebc;
+  background-color: rgb(21, 125, 223);
+  padding: 9px;
+  color: black
+}
+
+.btn:hover{
+  background-color: black;
+  color: red;
+}
+
+
+.cards {
+  display:grid;
+  grid-gap: 3rem;
+  margin: 3rem 1rem 3rem 1rem;
+  width: 70%;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.cards a {
+ text-decoration: none;
+ color: #dd3030;
+}
+
+.card-img {
+ width: 100%;
+ display: block;
+}
+
+.card {
+ border: 1px solid #ccc;
+}
+
+.card h4,
+.card p {
+ padding: 0 1rem;
+}
+
+.card p {
+ margin-bottom: 1.5rem;
+}
+
+.card:hover {
+ box-shadow: 0px 0px 8px blue;
+ transition: .5s;
+ transform: translate(10px,-5px);
+}
+
+@media (min-width: 500px) {
+.cards {
+ grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media (min-width: 900px) {
+.cards {
+ grid-template-columns: repeat(4, 1fr);
+}
+}
+
+.container{
+  margin: 2rem;
+  padding: 2rem;
+  display: inline-flex;
+}
+
+.comic{
+  padding-right: 3rem;
+}
+
+.series{
+  padding-left: 2rem;
+  padding-right: 3rem;
+}
+
+.story{
+  padding-left: 1rem;
+}
+
+.create-list{
+  display: inline-block;
+}
+.story-list{
+  display: inline-block;
+}
+
+.back{
+  padding: 0.4rem 0.8rem;
+	background-color: rgb(21, 125, 223);
+	border-radius: 3px;
+	color: white;
+  text-decoration: none;
+  position: absolute;
+  margin-top: 10px;
+}
+
+.back:hover{
+  background-color: black;
+	color: red;
+	border: 2px solid white;
+}
