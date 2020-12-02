@@ -22,6 +22,9 @@ module.exports = {
         if (title === undefined || cast === undefined || info === undefined || plot === undefined || rating === undefined)
             throw 'Undefined Inputs'
         
+        if (title.length === 0 || cast.length === 0 || info === null || plot.length === 0 || rating === null)
+            throw 'Empty Fields Error'
+        
         const movieCollection = await movies()
 
         let newMovie = {
@@ -108,9 +111,12 @@ module.exports = {
         
         if (!Array.isArray(newCast))
             throw 'Invalid inputs for Cast'
+        
+        if (newTitle.length === 0 || newCast.length === 0 || newInfo.length === 0 || newPlot.length === 0 || newRating.length === 0)
+            throw 'Empty Fields Error'
 
         const movieCollection = await movies()
-        const previous = await this.getMovieById(id)
+        await this.getMovieById(id)
         let id1 = require('mongodb').ObjectID(id)
 
         var query = {
@@ -135,19 +141,48 @@ module.exports = {
 
     },
 
-    async partial(id, newRating){
+    async partial(id, newTitle, newCast, newInfo, newPlot, newRating){
         if (!id)
-            throw  'Need ID to update'
+            throw 'Need ID to update'
         
         const movieCollection = await movies()
-        await this.getMovieById(id)
+        const previous = await this.getMovieById(id)
         let id1 = require('mongodb').ObjectID(id)
 
+        //console.log(previous.title)
+        let newd = Array()
+        if(!newTitle){
+            newTitle = `${previous.title}`
+        }
+        if(!newCast){
+            newCastt = previous.cast
+            //console.log(newCastt)
+            for(let i in newCastt){
+                newd.push(newCastt[i])
+            }
+            //console.log(newd)
+        }
+        if(!newInfo){
+            newInfo = `${previous.info}`
+        }
+        if(!newPlot){
+            newPlot = `${previous.plot}`
+        }
+        if(!newRating){
+            newRating = `${previous.rating}`
+        }
+        if(!newTitle && !newCast && !newPlot && !newRating && !newInfo){
+            throw 'Need Some fields to perform PATCH'
+        }
         var query = {
             _id: id1
         }
         var newMovie = {
             $set: {
+                title: newTitle,
+                cast: newd,
+                info: newInfo,
+                plot: newPlot,
                 rating: newRating
             }
         }

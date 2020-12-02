@@ -78,13 +78,17 @@ app.patch('/:id', async(req, res) => {
     }
 
     try{
+        const newTitle = req.body.newTitle
+        const newCast = req.body.newCast
+        const newInfo = req.body.newInfo
+        const newPlot = req.body.newPlot
         const newRating = req.body.newRating
 
-        const partialUpdate = await movie.partial(req.params.id, newRating)
+        const partialUpdate = await movie.partial(req.params.id, newTitle, newCast, newInfo, newPlot, newRating)
         res.status(200).send(partialUpdate)
     } catch(e){
         res.status(404).send({
-            error: e
+            error: e.message
         })
     }
 })
